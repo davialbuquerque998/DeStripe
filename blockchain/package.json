@@ -1,0 +1,23 @@
+{
+  "name": "blockchain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "deployHolesky":"npx hardhat run scripts/deploy.ts --network holesky",
+    "deployLocal":"npx hardhat run scripts/deploy.ts --network localhost",
+    "test":"npx hardhat test",
+    "coverage":"npx hardhat coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.13"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}
