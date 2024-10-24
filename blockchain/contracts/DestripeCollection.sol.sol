@@ -12,7 +12,7 @@ contract DestripeCollection is ERC721, Ownable {
     address public authorizedContract;
 
 
-    string public baseUri ="http://localhost:3000/nfts/";
+    string public baseUri ="http://127.0.0.1:3000/nfts/";
 
 
     function setAuthorizedContract(address newAuthorizedContract) external onlyOwner {
@@ -47,14 +47,9 @@ contract DestripeCollection is ERC721, Ownable {
         _burn(tokenId);
     }
 
-    function setApprovalForAll(address operator, bool approved) public virtual override onlyOwner {
+    /* function setApprovalForAll(address operator, bool approved) public virtual override onlyOwner {
         _setApprovalForAll(operator, authorizedContract, approved);
-    }
-
-    function safeMint(address to) public onlyOwner {
-        uint256 tokenId = _currentTokenId++;
-        _safeMint(to, tokenId);
-    }
+    } */
 
     function mint(address customer) external returns(uint256) {
         require(msg.sender == authorizedContract || msg.sender == owner(), "Only the owner or the authorized contract can mint this token");
